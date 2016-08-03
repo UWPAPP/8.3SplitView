@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>_8.3SplitView</title>
+    <link href="lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="lib/winjs-4.0.1/js/base.js"></script>
+    <script src="lib/winjs-4.0.1/js/ui.js"></script>
+    <link href="css/default.css" rel="stylesheet" />
+    <script src="js/main.js"></script>
+</head>
+
+<body class="win-type-body">
+    <div id="app" class="win-large">
+        <div class="radiodiv">
+            <h3 class="win-h3">Window sizes:</h3>
+            <input class="win-radio" type="radio" name="placement" value="large" checked="checked" id="largescreen" data-win-bind="onclick: radioChanged" /><label for="largescreen">Large screen</label>
+            <input class="win-radio" type="radio" name="placement" value="medium" id="mediumscreen" data-win-bind="onclick: radioChanged" /><label for="mediumscreen">Medium screen</label>
+            <input class="win-radio" type="radio" name="placement" value="small" id="smallscreen" data-win-bind="onclick: radioChanged" /><label for="smallscreen">Small screen</label>
+        </div>
+
+        <div class="splitView" 
+             data-win-control="WinJS.UI.SplitView" 
+             data-win-options="{
+                openedDisplayMode: 'inline',
+                closedDisplayMode: 'inline'
+             }">
+            <!-- Pane area -->
+            <div>
+                <div class="header">
+                    <!--设置切换按钮以及它所关联的splitView-->
+                    <button class="win-splitviewpanetoggle"
+                            data-win-control="WinJS.UI.SplitViewPaneToggle"
+                            data-win-options="{ splitView: select('.splitView') }"></button>
+                    <div class="title">SplitView Pane area</div>
+                </div>
+
+                <div class="nav-commands">
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Home', icon: 'home'}"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Favorite', icon: 'favorite'}"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+                </div>
+            </div>
+
+
+            <!-- Content area -->
+            <!--button貌似可以不要-->
+            <!--<button class="win-splitviewpanetoggle"
+                    data-win-control="WinJS.UI.SplitViewPaneToggle"
+                    data-win-options="{ splitView: select('.splitView') }"></button>-->
+            <div class="contenttext"><h2 class="win-h2">SplitView Content area</h2> </div>
+        </div>
+    </div>
+</body>
+</html>
